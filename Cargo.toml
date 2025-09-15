@@ -4,3 +4,4 @@ members = [
     "webformd_macros",
     "webformd",
 ]
+resolver = "3"
