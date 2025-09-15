@@ -1,3 +1,4 @@
+[![Rust](https://github.com/prfiredragon/webformdeserializer/actions/workflows/rust.yml/badge.svg)](https://github.com/prfiredragon/webformdeserializer/actions/workflows/rust.yml)
 # `webformd` - Web Form Deserializer
 
 [!Crates.io](https://crates.io/crates/webformd)
