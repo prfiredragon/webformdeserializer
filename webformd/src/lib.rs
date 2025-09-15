@@ -5,4 +5,4 @@ pub trait WebFomData: Sized {
 }
 
 // Re-export the macro from the other crate
-pub use webformd_macros::WebformDeserialize;
+pub use webformd_macros::{WebformDeserialize};
