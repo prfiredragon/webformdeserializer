@@ -1,0 +1,6 @@
+# webformdeserializer/Cargo.toml
+[workspace]
+members = [
+    "webformd_macros",
+    "webformd",
+]

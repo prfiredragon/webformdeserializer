@@ -1,0 +1,8 @@
+[package]
+name = "webformd"
+version = "0.1.0"
+edition = "2024"
+license = "CC0-1.0"
+
+[dependencies]
+webformd_macros = { version = "0.1.0", path = "../webformd_macros" }
