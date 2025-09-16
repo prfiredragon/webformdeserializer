@@ -16,10 +16,10 @@ pub fn deserialize(input: TokenStream) -> TokenStream {
         if let Fields::Named(fields) = &data_struct.fields {
             &fields.named
         } else {
-            panic!("`#[derive(OursistemDeserialize)]` only supports structs with named fields.");
+            panic!("`#[derive(WebformDeserialize)]` only supports structs with named fields.");
         }
     } else {
-        panic!("`#[derive(OursistemDeserialize)]` only supports structs.");
+        panic!("`#[derive(WebformDeserialize)]` only supports structs.");
     };
 
     let mut declarations = vec![];
@@ -125,7 +125,16 @@ pub fn deserialize(input: TokenStream) -> TokenStream {
         } else {
             // This is the part for a required `String`, where `ok_or_else` is correct.
             if from_str_attr {
-                // ...
+                // NEW CASE: required T (not Option or Vec) with from_str
+                let ty_to_parse = field_ty; // Use the field's type directly
+                declarations.push(quote! { let mut #field_name: Option<String> = None; });
+                matches.push(quote! { #field_name_str => { #field_name = Some(value.clone()); } });
+                assignments.push(quote! {
+                    #field_name: {
+                        let temp = #field_name.ok_or_else(|| format!("Missing required field: '{}'", #field_name_str))?;
+                        temp.parse::<#ty_to_parse>().map_err(|e| format!("Parsing error for '{}': {}", #field_name_str, e))?
+                    },
+                });
             } else {
                 declarations.push(quote::quote! { let mut #field_name: Option<String> = None; });
                 matches.push(quote::quote! {

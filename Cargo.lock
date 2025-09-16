@@ -39,14 +39,14 @@ checksum = "f63a545481291138910575129486daeaf8ac54aee4387fe7906919f7830c7d9d"
 
 [[package]]
 name = "webformd"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "webformd_macros",
 ]
 
 [[package]]
 name = "webformd_macros"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "proc-macro2",
  "quote",
