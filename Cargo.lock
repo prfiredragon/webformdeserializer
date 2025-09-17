@@ -41,12 +41,23 @@ checksum = "f63a545481291138910575129486daeaf8ac54aee4387fe7906919f7830c7d9d"
 name = "webformd"
 version = "0.1.2"
 dependencies = [
- "webformd_macros",
+ "webformd_macros 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "webformd_macros"
 version = "0.1.2"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
+name = "webformd_macros"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8fca3da1b9977731c1dc22e51c8d03e30e6d4d43bacf9201a4ac9c1034bdb89e"
 dependencies = [
  "proc-macro2",
  "quote",
