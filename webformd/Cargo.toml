@@ -3,6 +3,8 @@ name = "webformd"
 version = "0.1.2"
 edition = "2024"
 license = "CC0-1.0"
+description = "trait for webformd_macro to deserialize actix_web::web::Form for structs with Option<Vec<String>> from a checkbox or similar"
+authors = ["Roberto Rodriguez"]
 
 [dependencies]
-webformd_macros = { version = "0.1.1", path = "../webformd_macros" }
+webformd_macros = "0.1.1"

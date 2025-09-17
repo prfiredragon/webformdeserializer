@@ -3,6 +3,8 @@ name = "webformd_macros"
 version = "0.1.2"
 edition = "2024"
 license = "CC0-1.0"
+description = "macro for webformd to deserialize actix_web::web::Form for structs with Option<Vec<String>> from a checkbox or similar"
+authors = ["Roberto Rodriguez"]
 
 [lib]
 proc-macro = true
